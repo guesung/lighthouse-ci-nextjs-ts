@@ -16,7 +16,7 @@ jobs:
       - name: Install Packages
         run: |
           npm install
-          npm install -g @lhci/cli
+          npm install -g @lhci/cli@0.3.x
 
       - name: npm build
         run: 
