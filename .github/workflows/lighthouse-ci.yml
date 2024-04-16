@@ -2,7 +2,7 @@ name: Lighhouse CI
 on: 
   pull_request:
     branches:
-      - main
+      - master
       - develop
 jobs:
   lhci:
