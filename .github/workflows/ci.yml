@@ -16,12 +16,11 @@ jobs:
       - name: Install Packages
         run: |
           npm install
-          npm install -g @lhci/cli@0.3.x
 
       - name: npm build
-        run: 
-          npm run build
+        run: npm run build
 
-      - name: run Lighthouse CI
-        run:
+      - name: run Lighthouse CI 
+        run: |
+          npm install -g @lhci/cli@0.3.x
           lhci autorun
