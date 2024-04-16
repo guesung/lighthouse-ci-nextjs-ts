@@ -15,7 +15,7 @@ jobs:
 
       - name: Install Packages
         run: |
-          npm install
+          npm install --force
 
       - name: npm build
         run: npm run build
