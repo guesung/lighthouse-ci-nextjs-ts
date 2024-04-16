@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 20.5
+      - name: Use Node.js 18.20.2
         uses: actions/setup-node@v3
         with:
-          node-version: 20.5
+          node-version: 18.20.2
       - name: npm install, build
         run: |
           npm install
