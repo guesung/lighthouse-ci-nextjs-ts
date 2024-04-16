@@ -1,26 +1,20 @@
-name: Run Lighthouse CI
+name: CI
 on: [push]
 jobs:
   lhci:
-    name: Lighthouse CI
+    name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Use Node.js 18.20.2
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 18.20.2
-
-      - name: Install Packages
+          node-version: 18.x
+      - name: npm install, build
         run: |
           npm install --force
-
-      - name: npm build
-        run: npm run build
-
-      - name: run Lighthouse CI 
+          npm run build
+      - name: run Lighthouse CI
         run: |
-          npm install -g @lhci/cli@0.12.0
+          npm install -g @lhci/cli@0.13.x
           lhci autorun
