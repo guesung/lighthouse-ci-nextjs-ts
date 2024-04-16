@@ -1,17 +1,12 @@
-name: Lighthouse CI
+name: Lighthouse
 on: push
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Audit URLs using Lighthouse
-      - run: npm install
+      - name: Run Lighthouse on urls and validate with lighthouserc
         uses: treosh/lighthouse-ci-action@v11
         with:
-          urls: |
-            https://example.com/
-            https://example.com/blog
-          budgetPath: ./budget.json # test performance budgets
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          urls: 'https://exterkamp.codes/'
+          configPath: './lighthouserc.json'
