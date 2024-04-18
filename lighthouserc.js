@@ -4,9 +4,6 @@ const pageUrlList = pagePathList.map((path) => `${WEB_URL}${path}`);
 
 module.exports = {
   ci: {
-    upload: {
-      target: "temporary-public-storage",
-    },
     coleect: {
       url: pageUrlList,
     },
